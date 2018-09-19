@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css?family=Bungee+Shade|IBM+Plex+Sans:400,600');
+
+body {
+    font-family: 'IBM Plex Sans';
+}
+
+h1 {
+    font-family: 'Bungee Shade';
+    font-weight: normal;
+    font-size: 5em;
+}
+
+h2 {
+    font-weight: 600; 
+    color: rgb(27, 27, 27);
+}
+
+h3 {
+    font-weight: 600;
+}
+
+p {
+    font-size: 1.1em;
+    font-weight: 400;
+    color: rgb(97, 97, 97);
+}
+
+.containerStyle {
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));    
+    grid-gap: 2em;
+}
+
+.authors {
+    text-transform: capitalize;
+    font-size: 1.3em;
+    margin: 0;
+    color: rgb(37, 37, 37);
+}
+
+.articleImage {
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-repeat: repeat;
+    border: 1px solid rgb(134, 134, 134);
+    border-radius: 5px;
+    display:flex;
+    justify-content: center;
+    align-items:flex-end;
+    box-shadow: -5px 5px 10px 0px rgba(0,0,0,0.15);
+}
+
+.articleContent {
+    background: white;
+    width: 100%;
+    opacity: 0.95;
+    margin: 40% 5% 5% 5%;
+    padding: 0% 3%;
+    text-align: center;
+    border-radius: 5px;
+    background-clip: padding-box;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding; 
+    border-top: 7px solid rgba(189,189,189,.9);  
+}
