@@ -54,7 +54,7 @@ export default class extends React.Component {
 
         const imgUrl = `https://pocket-image-cache.com/direct?url=${
           article.top_image_url
-        }&resize=w200-nc&f=t`;
+        }&resize=w300-nc&f=t`;
         const articleImage =
           imgUrl.includes('url=undefined') == true
             ? '/static/placeholder.png'
@@ -83,17 +83,30 @@ export default class extends React.Component {
     return (
       <Layout>
         <h1>Longreads</h1>
-        <p className="introText">
-          I read a lot of articles on the internet. I particularly enjoy
-          "longreads", or "long-form journalism". According to wikipedia, we're
-          talking about "longer articles with larger amounts of content" -
-          between 1,000 and 20,000 words. According to me, we're talking about
-          anything I find interesting that's on the internet.
-        </p>
-        <div className="containerStyle">
-          {this.props.articles.map(article => {
-            return <ArticleCard article={article} key={article.articleTitle} />;
-          })}
+        <div className="introText">
+          <p>
+            I read a lot of articles on the internet. I particularly enjoy{' '}
+            <span style={{ fontWeight: 500 }}>longreads</span>, or{' '}
+            <span style={{ fontWeight: 500 }}>longform journalism</span>.
+            According to wikipedia, we're talking about "longer articles with
+            larger amounts of content" - between 1,000 and 20,000 words.
+            According to me, we're talking about any story I find interesting
+            that's on the internet.
+          </p>{' '}
+          <p>
+            I used <a href="https://getpocket.com/">Pocket</a> to hold on to and
+            read articles. The ones listed below are those I've "favorited"
+            through the app with the most recently read at the beginning.
+          </p>
+        </div>
+        <div className="background">
+          <div className="containerStyle">
+            {this.props.articles.map(article => {
+              return (
+                <ArticleCard article={article} key={article.articleTitle} />
+              );
+            })}
+          </div>
         </div>
       </Layout>
     );

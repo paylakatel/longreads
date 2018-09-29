@@ -4,6 +4,7 @@ import { format } from 'date-fns';
 export default function ArticleCard(props) {
   return (
     <a
+      className="articleCard"
       href={props.article.articleUrl}
       target="_blank"
       key={props.article.articleTitle}
