@@ -34,6 +34,8 @@ export default function ArticleCard(props) {
           <p>
             {format(new Date(props.article.timeFavorited * 1000), 'MM-DD-YYYY')}
           </p>
+          {/* TODO: add article excerpt 
+          <p> {props.article.excerpt}</p> */}
         </div>
       </div>
     </a>

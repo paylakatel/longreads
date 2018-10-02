@@ -12,6 +12,7 @@ export default class extends React.Component {
       favorite: 1,
       sort: 'newest',
       detailType: 'complete',
+      contentType: 'article',
     };
 
     const response = await fetch(
@@ -19,7 +20,9 @@ export default class extends React.Component {
         options.consumerKey
       }&access_token=${options.accessToken}&favorite=${
         options.favorite
-      }&detailType=${options.detailType}&sort=${options.sort}`
+      }&detailType=${options.detailType}&contentType=${
+        options.contentType
+      }&sort=${options.sort}`
     );
     const data = await response.json();
 
@@ -29,8 +32,6 @@ export default class extends React.Component {
         // The object with the metadata for each article is the
         // second item in each array so we grab it
         const article = item[1];
-
-        let rgb = '';
 
         // An article can have multiple authors or no authors (probably
         // due an issue with pocket), so we map over each Object in the
@@ -69,7 +70,7 @@ export default class extends React.Component {
           timeFavorited: article.time_favorited,
           wordCount: article.word_count,
           timeToRead: timeToRead,
-          color: rgb,
+          excerpt: article.excerpt,
         };
         // sort the articles by timeFavorited so the newest show on top
       })
@@ -94,9 +95,24 @@ export default class extends React.Component {
             that's on the internet.
           </p>{' '}
           <p>
-            I used <a href="https://getpocket.com/">Pocket</a> to hold on to and
+            I use <a href="https://getpocket.com/">Pocket</a> to hold on to and
             read articles. The ones listed below are those I've "favorited"
             through the app with the most recently read at the beginning.
+          </p>
+          <p>
+            If you're looking for a good read, I'd reccommend any of the ones
+            below. I'd also reccommend all of the following email newsletters:{' '}
+            <a href="https://longreads.com/newsletter/" target="_blank">
+              Longreads
+            </a>
+            ,{' '}
+            <a href="https://longform.org/newsletter" target="_blank">
+              Longform
+            </a>
+            , and the{' '}
+            <a href="https://sundaylongread.com/" target="_blank">
+              Sunday long read.
+            </a>
           </p>
         </div>
         <div className="background">
@@ -107,6 +123,18 @@ export default class extends React.Component {
               );
             })}
           </div>
+        </div>
+        <br />
+        <div className="introText">
+          <h1 className="subTitle">Tech notes</h1>
+          <p>
+            This app is put together using NextJS and React. The data comes from
+            the <a href="https://getpocket.com/developer/">Pocket api</a>. The
+            code can be found on{' '}
+            <a href="https://github.com/paylakatel/longreads">github</a>, and
+            you can checkout other things I've built/worked on{' '}
+            <a href="https://paylakatel.github.io/">here</a>.
+          </p>
         </div>
       </Layout>
     );
