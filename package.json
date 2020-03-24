@@ -24,8 +24,8 @@
   "now": {
     "alias": "longreads",
     "env": {
-      "CONSUMER_KEY": "@pocket-consumer-key",
-      "ACCESS_TOKEN": "@pocket-access-token"
+      "POCKET_CONSUMER_KEY": "@pocket_consumer_key",
+      "POCKET_ACCESS_TOKEN": "@pocket_access_token"
     }
   }
 }

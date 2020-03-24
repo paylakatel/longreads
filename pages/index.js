@@ -7,8 +7,8 @@ import Layout from '../components/Layout.js';
 export default class extends React.Component {
   static async getInitialProps() {
     const options = {
-      consumerKey: process.env.CONSUMER_KEY,
-      accessToken: process.env.ACCESS_TOKEN,
+      consumerKey: process.env.POCKET_CONSUMER_KEY,
+      accessToken: process.env.POCKET_ACCESS_TOKEN,
       favorite: 1,
       sort: 'newest',
       detailType: 'complete',
@@ -16,13 +16,7 @@ export default class extends React.Component {
     };
 
     const response = await fetch(
-      `https://getpocket.com/v3/get?consumer_key=${
-        options.consumerKey
-      }&access_token=${options.accessToken}&favorite=${
-        options.favorite
-      }&detailType=${options.detailType}&contentType=${
-        options.contentType
-      }&sort=${options.sort}`
+      `https://getpocket.com/v3/get?consumer_key=${options.consumerKey}&access_token=${options.accessToken}&favorite=${options.favorite}&detailType=${options.detailType}&contentType=${options.contentType}&sort=${options.sort}`
     );
     const data = await response.json();
 
@@ -53,9 +47,7 @@ export default class extends React.Component {
         // reading speed
         const timeToRead = Math.round(article.word_count / 200);
 
-        const imgUrl = `https://pocket-image-cache.com/direct?url=${
-          article.top_image_url
-        }&resize=w300-nc&f=t`;
+        const imgUrl = `https://pocket-image-cache.com/direct?url=${article.top_image_url}&resize=w300-nc&f=t`;
         const articleImage =
           imgUrl.includes('url=undefined') == true
             ? '/static/placeholder.png'

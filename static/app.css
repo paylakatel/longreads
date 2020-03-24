@@ -11,6 +11,13 @@ body {
   margin-left: 2rem;
 }
 
+@media only screen and (min-width: 1300px) {
+  body {
+    margin-right: 8rem;
+    margin-left: 8rem;
+  }
+}
+
 h1 {
   font-family: 'Bungee Shade';
   font-weight: normal;
@@ -62,10 +69,9 @@ a {
 
 .introText p {
   color: rgb(20, 20, 20);
-  margin-block-end: 3em;
   line-height: 1.5em;
   margin-block-end: 1em;
-  font-size: 0.9em;
+  font-size: 1.1em;
 }
 
 .introText a {
@@ -125,7 +131,7 @@ a.articleCard:hover {
 .articleContent {
   background: rgb(240, 240, 240);
   width: 100%;
-  opacity: 0.95;
+  opacity: 1;
   margin: 45% 0% 0% 0%;
   padding: 0% 2%;
   text-align: center;
